@@ -1,0 +1,11 @@
+--CREATE TABLE users(id INTEGER PRIMARY KEY autoincrement,username TEXT NOT NULL, password TEXT NOT NULL,dateOfBirth TEXT);
+
+--INSERT INTO users(username,password,dateOfBirth) VALUES ("admin","password","01/01/1990");
+
+--SELECT * FROM extension;
+
+-- CREATE TABLE feedback(id INTEGER PRIMARY KEY autoincrement,feedback TEXT NOT NULL);
+
+-- INSERT INTO feedback(feedback) VALUES ("Tempe High School Students WERE HERE!");
+
+DELETE FROM feedback WHERE id > 12;

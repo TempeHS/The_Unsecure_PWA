@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<h1>Signup Form</h1>
+<form action="/signup.html" method="POST" class="box">
+    <div class="input__wrapper">
+        <input type="text" name="username" placeholder="Username" class="input__field">
+    </div>            
+    <div class="input__wrapper">
+        <input type="password" name="password" placeholder="Password" class="input__field">
+    </div>
+    <div class="input__wrapper">
+        <input type="dateOfBirth" name="dob" placeholder="Date of Birth" class="input__field">
+    </div>
+    <div class="input__wrapper">
+        <button type="submit" class="btn">Submit</button>
+    </div>
+</form>
+
+
+
+{% endblock %}

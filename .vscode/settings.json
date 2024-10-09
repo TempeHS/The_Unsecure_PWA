@@ -1,0 +1,12 @@
+{				
+    "files.autoSave": "onFocusChange",
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "ms-python.black-formatter",
+	"editor.fontSize": 18,
+	"terminal.integrated.defaultProfile.windows": "Git Bash",
+        "workbench.editorAssociations": {   
+        "*.md": "vscode.markdown.preview.editor",
+    },
+	"window.restoreWindows"
+}

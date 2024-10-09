@@ -1,0 +1,68 @@
+{
+    "name": "The Unsecure PWA",
+    "short_name": "unsecPWA",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#000",
+    "theme_color": "#000",
+    "orientation": "portrait-primary",
+    "icons": [
+      {
+        "src": "icons/icon-128x128.png",
+        "type": "image/png",
+        "sizes": "128x128",
+        "purpose": "maskable"
+      },
+      {
+        "src": "icons/icon-128x128.png",
+        "type": "image/png",
+        "sizes": "128x128",
+        "purpose": "any"
+      },
+      {
+        "src": "icons/icon-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192",
+        "purpose": "maskable"
+      },
+      {
+        "src": "icons/icon-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192",
+        "purpose": "any"
+      },
+      {
+        "src": "icons/icon-384x384.png",
+        "type": "image/png",
+        "sizes": "384x384",
+        "purpose": "maskable"
+      },
+      {
+        "src": "icons/icon-384x384.png",
+        "type": "image/png",
+        "sizes": "384x384",
+        "purpose": "any"
+      },
+      {
+        "src": "icons/icon-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "purpose": "maskable"
+      },
+      {
+        "src": "icons/icon-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512",
+        "purpose": "any"
+      }
+    ],
+  "screenshots" : [
+    {
+      "src": "icons/screenshot.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Homescreen of The Unsecure PWA"
+    }
+  ]
+  }

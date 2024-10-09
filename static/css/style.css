@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap");
+*   {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background: #fdfdfd;
+    font-family: "Nunito", sans-serif;
+    font-size: 1rem;
+}
+h1 {
+    text-align:left;
+}
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 0.5rem;
+    text-align: center;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img {
+    height:100px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+}
+nav li {
+    margin-right: 1rem;
+}
+nav ul li a {
+    text-decoration-line:none;
+    text-transform: uppercase; 
+    color: #333;
+}
+nav ul li a:hover {
+    color: #999;
+}
+nav h1 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+.disclaimer{
+    margin:50px 0 50px 0;
+}
+form.box{
+    padding: 1.5rem;
+    width: 100%;
+    padding-right: 0.75rem;
+    border-radius: 0.5rem;
+}
+form {
+    width:100%;
+}
+.input__wrapper{
+    position:relative;
+    padding: 1rem 0 0;
+    width: 100%;
+}
+.input__field {
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    border: 1px solid #000;
+    padding-right: 2rem;
+    background: transparent;
+    transition: all 0.2s;
+    width:100%;
+}
+.input__field:placeholder-shown
+~.input__label {
+    font-size: 1rem;
+    cursor: text;
+    top: 1.5rem;
+}
+label,
+.input__field:focus~.input__label{
+    position: absolute;
+    top: 0.075rem;
+    padding: 1 0.05rem;
+    display: block;
+    font-size: 1.5rem;
+    left: 0.5rem;
+    transition: 0.3s;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 1rem 0;
+}
+.card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 17rem;
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 10px;
+    margin: auto;
+    overflow: hidden;
+}
+.card-image {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+}
+.card-name {
+    color: #333;
+    font-weight: 700;
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+.card-about {
+    text-overflow: ellipsis;
+    width: 15rem;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom:1rem;
+}
+.btn {
+    border:none;
+    background:none;
+    border-radius:5px;
+    box-shadow:1px 1px 2px rgba(21, 21, 21, 0.1);
+    cursor:pointer;
+    font-size:1.25rem;
+    margin:0 1rem;
+    padding:.25rem 2rem;
+    transition:all .25s ease-in-out;
+    background: #bbb;
+    color:#333;
+    margin-bottom:1rem;
+}
+.btn:focus, .btn:hover {
+    box-shadow:1px 1px 2px rgba(0, 0, 0, 0.2);
+    background: #bbb;
+}
+.about-container {
+    font-size:1.25rem;
+    margin-top:2rem;
+    text-align: justify;
+    text-justify: inter-word;
+}

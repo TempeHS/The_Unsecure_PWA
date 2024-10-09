@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1>Welcome {{ value }}!</h1>
+<form action="/sucess.html" method="post" class="box">
+  <div class="input__wrapper">
+    <input style="height:100px;vertical-align:top" type="text" name="feedback" id="feedback" placeholder="Enter your feedback here" class="input__field" required/>
+  </div>
+  <div class="input__wrapper">
+    <input type="submit" class="btn" value="Submit Feedback" />
+  </div>
+</form>
+<hr/>
+  <br/>
+  <h1>Others feedback</h1>
+
+      <div>
+        {% include "partials/sucess_feedback.html" %}
+      </div>
+
+{% endblock %}
