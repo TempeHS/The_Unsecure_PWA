@@ -11,6 +11,7 @@ Software Engineers should consider security and privacy at every phase of the SD
 | Integration | <ul><li>Risk assessment</li><li>Code reviews</li><li>Dynamic application security testing</li><li>Grey-box penetration testing</li></ul> |
 | Testing and debugging | <ul><li>Code reviews</li><li>Static application security testing</li><li>Dynamic application security testing</li><li>Penetration testing</li></ul> |
 | Installation | <ul><li>Penetration testing</li><li>Vulnerability assessment</li></ul> |
+| Maintenance | <ul><li>Log monitoring & reporting</li><li>Vulnerability assessment</li></ul> |
 
 ## Code review
 Code review is the process of thoroughly examining and evaluating an application's source code to identify potential security vulnerabilities at the code level. It is a manual approach to white-box testing.
