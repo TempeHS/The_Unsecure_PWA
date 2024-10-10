@@ -12,9 +12,9 @@ Consider the following algorithm run in parallel threads for a shopping cart dis
 | 03 |  &nbsp;&nbsp;&nbsp;&nbsp;`GET voucher_applied()` | |
 | 04 | | &nbsp;&nbsp;&nbsp;&nbsp;`GET voucher_applied()`
 | 05 |  &nbsp;&nbsp;&nbsp;&nbsp;`apply_disc(calc_disc(v), cart)` |
-| 06 | &nbsp;&nbsp;&nbsp;&nbsp;`SET disc_applied(True)` | |
+| 06 | &nbsp;&nbsp;&nbsp;&nbsp;`SET voucher_applied(True)` | |
 | 07 | |  &nbsp;&nbsp;&nbsp;&nbsp;`apply_disc(calc_disc(v), cart)` |
-| 08 | | &nbsp;&nbsp;&nbsp;&nbsp;`SET disc_applied(True)` |
+| 08 | | &nbsp;&nbsp;&nbsp;&nbsp;`SET voucher_applied(True)` |
 | 09 | &nbsp;&nbsp;&nbsp;&nbsp;`render_front_end()` | |
 | 10 | `END apply_voucher` | |
 | 11 | | &nbsp;&nbsp;&nbsp;&nbsp;`render_front_end()` | 
