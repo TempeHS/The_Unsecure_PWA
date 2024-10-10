@@ -20,9 +20,9 @@ Consider the following algorithm run in parallel threads for a shopping cart dis
 | 11 | | `    apply_disc(calc_disc(v), cart)` |
 | 12 | | `    SET voucher_applied(True)` |
 | 13 | `    RETURN render_front_end()` | |
-| 14 | `    END apply_voucher` | |
+| 14 | `END apply_voucher` | |
 | 15 | | `    RETURN render_front_end()` | 
-| 16 | | `    END apply_voucher`  |
+| 16 | | `END apply_voucher`  |
 
 In this example, the vulnerability is easily exploited because of the processing time between the GET (or check) and the SET, which allows the discount to be applied multiple times.
 
