@@ -16,9 +16,9 @@ Consider the following algorithm run in parallel threads for a shopping cart dis
 | 07 |  | `        RETURN` |
 | 08 |  | `    ENDIF` |
 | 09 | `    apply_disc(calc_disc(v), cart)` |
-| 10 | `    SET voucher_applied(True)` | |
+| 10 | `    SET voucher_applied(TRUE)` | |
 | 11 | | `    apply_disc(calc_disc(v), cart)` |
-| 12 | | `    SET voucher_applied(True)` |
+| 12 | | `    SET voucher_applied(TRUE)` |
 | 13 | `    RETURN render_front_end()` | |
 | 14 | `END apply_voucher` | |
 | 15 | | `    RETURN render_front_end()` | 
@@ -27,17 +27,18 @@ Consider the following algorithm run in parallel threads for a shopping cart dis
 In this example, the vulnerability is easily exploited because of the processing time between the GET (or check) and the SET, which allows the discount to be applied multiple times.
 
 ## How to secure against this attack
-1. Consider multithreading in any shared resources (discounts, logins, session ID creation, etc), implement a lock by 'session ID' algorithm, and minimise processing time between the SET and the GET (or check) of the lock.
-2. Implement unique 'session IDs' which can not be brute forced or calculated
-3. Use the 'session ID' in all processes and explicitly return to the specified 'session ID'
-4. Use asynchronous encryption for all form inputs. For example, use [CSRF Protect](https://flask-wtf.readthedocs.io/en/0.15.x/csrf/).
+1. Consider multithreading in any shared resource process, including (discounts, login processes, session ID creation, etc).
+2. Implement a lock using the 'session ID' as a key in the algorithm, and most importantly, minimise the processing time between the lock's GET (or check) and SET.
+3. Implement unique 'session IDs' which can not be brute forced or calculated
+4. Use the 'session ID' in all processes and explicitly return to the specified 'session ID'
+5. Encrypt all form inputs asynchronously. For example, use [CSRF Protect](https://flask-wtf.readthedocs.io/en/0.15.x/csrf/).
 
 ```pseudocode
     BEGIN apply_voucher(v_id, cart, sessionID)
         WHILE GET voucher_process_lock(sessionID) is TRUE
             do nothing
         ENDWHILE
-        SET voucher_lock(sessionID,TRUE)
+        SET voucher_lock(sessionID, TRUE)
         GET voucher_applied()
         apply_disc(calc_disc(v_id), cart)
         SET disc_applied(True)
@@ -45,5 +46,3 @@ In this example, the vulnerability is easily exploited because of the processing
         return render_front_end(sessionID)
     END apply_voucher
 ```
-
-
