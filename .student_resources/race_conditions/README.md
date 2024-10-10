@@ -9,7 +9,9 @@ Consider the following algorithm run in parallel threads for a shopping cart dis
 | ------ | ------ | ------ | 
 | 01 | `BEGIN apply_voucher(v, cart)` | |
 | 02 | | `BEGIN apply_voucher(v)`|
-| 03 |  &nbsp;&nbsp;&nbsp;&nbsp;`GET voucher_applied()` | |
+| 03 |  &nbsp;&nbsp;&nbsp;&nbsp;`IF GET voucher_applied()` = TRUE | |
+| 03 |  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`return` | |
+| 03 |  &nbsp;&nbsp;&nbsp;&nbsp;`ENDIF` | |
 | 04 | | &nbsp;&nbsp;&nbsp;&nbsp;`GET voucher_applied()`
 | 05 |  &nbsp;&nbsp;&nbsp;&nbsp;`apply_disc(calc_disc(v), cart)` |
 | 06 | &nbsp;&nbsp;&nbsp;&nbsp;`SET voucher_applied(True)` | |
