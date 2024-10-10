@@ -9,19 +9,19 @@ Consider the following algorithm run in parallel threads for a shopping cart dis
 | ------ | ------ | ------ | 
 | 01 | `BEGIN apply_voucher(v, cart)` | |
 | 02 | | `BEGIN apply_voucher(v)`|
-| 03 |  &nbsp;&nbsp;&nbsp;&nbsp;`IF GET voucher_applied()` = TRUE | |
-| 04 |  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`return` | |
+| 03 |  &nbsp;&nbsp;&nbsp;&nbsp;`IF GET voucher_applied() = TRUE` | |
+| 04 |  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`RETURN` | |
 | 05 |  &nbsp;&nbsp;&nbsp;&nbsp;`ENDIF` | |
-| 06 |  | &nbsp;&nbsp;&nbsp;&nbsp;`IF GET voucher_applied()` = TRUE |
-| 07 |  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`return` |
+| 06 |  | &nbsp;&nbsp;&nbsp;&nbsp;`IF GET voucher_applied() = TRUE` |
+| 07 |  | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`RETURN` |
 | 08 |  | &nbsp;&nbsp;&nbsp;&nbsp;`ENDIF` |
 | 09 |  &nbsp;&nbsp;&nbsp;&nbsp;`apply_disc(calc_disc(v), cart)` |
 | 10 | &nbsp;&nbsp;&nbsp;&nbsp;`SET voucher_applied(True)` | |
 | 11 | |  &nbsp;&nbsp;&nbsp;&nbsp;`apply_disc(calc_disc(v), cart)` |
 | 12 | | &nbsp;&nbsp;&nbsp;&nbsp;`SET voucher_applied(True)` |
-| 13 | &nbsp;&nbsp;&nbsp;&nbsp;`render_front_end()` | |
+| 13 | &nbsp;&nbsp;&nbsp;&nbsp;`RETURN render_front_end()` | |
 | 14 | `END apply_voucher` | |
-| 15 | | &nbsp;&nbsp;&nbsp;&nbsp;`render_front_end()` | 
+| 15 | | &nbsp;&nbsp;&nbsp;&nbsp;`RETURN render_front_end()` | 
 | 16 | | `END apply_voucher`  |
 
 In this example, the vulnerability is easily exploited because of the processing time between the GET (or check) and the SET, which allows the discount to be applied multiple times.
