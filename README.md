@@ -63,6 +63,7 @@ To support students first understanding specific security vunerabilities and pri
 - [Cross Site Scripting XSS](.student_resources\XSS_scripts\README.md).
 - [SQL Injections](.student_resources\SQL_Injection).
 - [Content Security Policy](.student_resources\content_security_policy\README.md)
+- [Race conditions](https://github.com/TempeHS/The_Unsecure_PWA/tree/main/.student_resources/race_conditions)
 
 ---
 
