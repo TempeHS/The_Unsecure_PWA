@@ -36,7 +36,7 @@ In this example, the vulnerability is easily exploited because of the processing
         GET voucher_applied()
         apply_disc(calc_disc(v_id), cart)
         SET disc_applied(True)
-        render_front_end()
+        render_front_end(sessionID)
         SET voucher_lock(sessionID, FALSE)
     END apply_voucher
 ```
