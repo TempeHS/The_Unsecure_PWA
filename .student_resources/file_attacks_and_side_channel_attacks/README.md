@@ -2,9 +2,9 @@
 
 ## File Attacks
 
-A file attack is an attack where threat actors use certain file types, usually a *.DOCX *.XLSX or *.PDF, to entice users to open them. The file in question is embedded with malicious code or links; thus, once opened, this code is also executed.
+A file attack is an attack where threat actors use certain file types, usually a *.DOCX, *.XLSX, *.PDF, or HTML email. Designed to entice users to open the document or follow a malcious link. If the file in is embedded with malicious code, the code will be executed when the document is opened. A common The objective of a fil attack is usually to install key logging software with back to base reporting.
 
-The example [Cross Site Request Forgery CSRF example](..\CSRF\index.html) is a type of file attack that can be embeed into a *.pdf file.
+The example [Cross Site Request Forgery CSRF example](..\CSRF\index.html) is a type of file attack that can be embedded into a *.pdf file or a HTML email.
 
 ## How to countermeasure this vulnerability
 - Countermeasure common vulnerabilities
@@ -19,7 +19,7 @@ The example [Cross Site Request Forgery CSRF example](..\CSRF\index.html) is a t
 ## Side Channel Attacks
 A side-channel attack does not target a program or its code directly. Rather, a side-channel attack attempts to gather information or influence the program execution of a system by measuring or exploiting indirect effects of the system or its hardware. Put simply, a side channel attack breaks cryptography by exploiting information inadvertently leaked by a system when performing cryptography. This can be achieved by measuring or analyzing various physical parameters such as supply current, execution time, and electromagnetic emission and then using machine learning to reverse engineer the cryptography.
 
-[TimeBasedLoginUserEnum](https://github.com/p0dalirius/TimeBasedLoginUserEnum) is an example of how to brute force a username based on response time for correct and incorrect usernames.
+[TimeBasedLoginUserEnum](https://github.com/p0dalirius/TimeBasedLoginUserEnum) is an example side channel attack which exploits the comparison of response times for correct and incorrect usernames to inform a username brute force.
 
 ## How to countermeasure this vulnerability
 Side-channel attacks can be tricky to defend against. They are difficult to detect in action, often do not leave any trace and may not alter a system while it's running.
