@@ -1,0 +1,7 @@
+Flask
+Flask_cors
+Flask-csp
+Flask-WTF
+Flask-Limiter
+qrcode
+pyotp

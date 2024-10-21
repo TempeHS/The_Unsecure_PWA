@@ -1,0 +1,46 @@
+# File Attacks and Side Channel Attacks
+
+## File Attacks
+
+A file attack is an attack where threat actors use certain file types, usually a *.DOCX *.XLSX or *.PDF, to entice users to open them. The file in question is embedded with malicious code or links; thus, once opened, this code is also executed.
+
+The example [Cross Site Request Forgery CSRF example](..\CSRF\index.html) is a type of file attack that can be embeed into a *.pdf file.
+
+## How to countermeasure this vulnerability
+- Countermeasure common vulnerabilities
+    - [Cross Frame Scripting - XFS](..\XFS\README.md)
+    - [Cross Site Request Forgery - CSRF](..\CSRF\README.md)
+    - [Cross Site Scripting - XSS](..\XSS\README.md)
+    - [Broken Authentication and Session Management](..\broken_authentication_and_session_management\README.md).
+- Implement [Two Factor Authentication - 2FA](..\two_factor_authentication\README.md).
+- End User education
+- White list firewalls and applciation control policies
+
+## Side Channel Attacks
+A side-channel attack does not target a program or its code directly. Rather, a side-channel attack attempts to gather information or influence the program execution of a system by measuring or exploiting indirect effects of the system or its hardware. Put simply, a side channel attack breaks cryptography by exploiting information inadvertently leaked by a system when performing cryptography. This can be achieved by measuring or analyzing various physical parameters such as supply current, execution time, and electromagnetic emission and then using machine learning to reverse engineer the cryptography.
+
+[TimeBasedLoginUserEnum](https://github.com/p0dalirius/TimeBasedLoginUserEnum) is an example of how to brute force a username based on response time for correct and incorrect usernames.
+
+## How to countermeasure this vulnerability
+Side-channel attacks can be tricky to defend against. They are difficult to detect in action, often do not leave any trace and may not alter a system while it's running.
+
+- Understand how the attack can be executed in the specific context of the application and user, then [code review](../security_testing_approaches/README.md#Code_review) with specific scenarios in mind.
+- Randomise operations and data access patterns for all crypotography processes
+- Introduce noise through random micro delays
+- Isochronous functions so the software runs for an exactly constant amount of time, independent of secret values.
+
+```python
+from datetime import date, datetime, timedelta
+from time import sleep
+
+start_time = datetime.now()
+end_time = start_time + timedelta(milliseconds=5)
+
+def autenticate_user (username, password)
+    #to be implemented with random duration and placements of pauses during computation
+
+while datetime.now() < end_time:
+    return render_template("/result.html")
+    sleep(1)
+```
+
