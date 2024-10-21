@@ -90,10 +90,10 @@ To support students first understanding specific security vulnerabilities and pr
 
 | Metalanguage | Definition |
 | --- | --- |
-| Attack vector | An approach to exploiting a vulnerability |
+| Attack vector | An approach to exploiting multiple vulnerabilities |
 | Brute force | uses trial and error to crack a system or software |
 | Exploit | The act of using a vulnerability to enter or compromise software or system |
-| Phishing | A wide base attack that is 'fishing' for sucess |
+| Phishing | A wide base attack that is 'fishing' for success |
 | Social engineering | Use of deception to manipulate individuals into divulging confidential or personal information |
 | Spear phishing | A targetted attack where the threat actor has personal knowledge of the victim |
 | Threat actor | A person or group with malicious intentions |
