@@ -59,7 +59,7 @@ You can test this tool with the Flask app in [app.py](test_app/app.py) and the w
 First step is to analyze whether there is a time based leak of information on the login tries:
 
 ```python
-python TimeBasedLoginAnalysis.py -u podalirius -S
+python TimeBasedLoginAnalysis.py -u admin -S
 ```
 
 ![An example graph output of the time analysis](README_Resources/graph.png)
@@ -69,7 +69,7 @@ python TimeBasedLoginAnalysis.py -u podalirius -S
 Now that we know that there is a time based leak of information, we can enumerate users with this command:
 
 ```python
-python TimeBasedLoginUserEnum.py -u admin -t 32 -s 100 -f ./test_app/users.txt
+python TimeBasedLoginUserEnum.py -u admin -t 32 -s 100 -f users.txt
 ```
 
 ![An example username validation](README_Resources/example.png)

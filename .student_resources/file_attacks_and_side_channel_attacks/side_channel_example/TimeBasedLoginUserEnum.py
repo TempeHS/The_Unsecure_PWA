@@ -11,8 +11,8 @@ def trylogin(username, results):
     session = requests.Session()
     try:
         r = session.post(
-            "http://127.0.0.1:5000/login",
-            data={"username": username, "password": "DummyPassword"},
+            "http://127.0.0.1:5000/index.html",
+            data={"username": username, "password": "password"},
         )
         results[username].append(r.elapsed.total_seconds() * 1000)
         return r.elapsed.total_seconds() * 1000

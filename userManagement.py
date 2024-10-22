@@ -1,5 +1,7 @@
 import sqlite3 as sql
 import json
+import time
+import random
 
 
 def insertUser(username, password, DoB):
@@ -23,6 +25,8 @@ def retrieveUsers(username, password):
         con.close()
         return False
     else:
+        # Simulate delayed response time of heavy app for UX testing
+        time.sleep(random.randint(190, 200) / 1000)
         con.close()
         return True
 
