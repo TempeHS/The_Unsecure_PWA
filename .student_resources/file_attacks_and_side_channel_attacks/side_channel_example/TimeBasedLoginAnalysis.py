@@ -1,9 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# File name          : TimeBasedLoginUserEnum.py
-# Author             : Podalirius (@podalirius_)
-# Date created       : 9 Mar 2022
-
 import argparse
 import re
 import requests
@@ -28,7 +22,7 @@ def trylogin(username, statistics):
 
 
 def parseArgs():
-    print("TimeBasedLoginAnalysis v1.1 - by @podalirius_\n")
+    print("TimeBasedLoginAnalysis v1.1\n")
 
     parser = argparse.ArgumentParser(description="Enumerate valid usernames based on the requests response times.")
     parser.add_argument("-u", "--username", default=None, required=True, help='Username')

@@ -4,7 +4,7 @@
 
 A file attack is an attack where threat actors use certain file types, usually a *.DOCX, *.XLSX, or *.PDF. Designed to entice users to open the document or follow a malicious link in a document. If the file in is embedded with malicious code, the code will be executed when the document is opened.
 
-The example [Cross Site Request Forgery CSRF example](..\CSRF\index.html) can simply be embedded into a *.pdf file. Or the [urgent_finance_review.xlsm](urgent_finance_review.xlsm) spreadsheet is a classic file attack that is sent in a convincing email. Thankfully it only has a simple prompt box. However, if opened it could easily have a more detailed script that silently installs key logging software with back to base reporting to a threat actor.
+The [urgent_finance_review.xlsm](urgent_finance_review.xlsm) spreadsheet is a common file attack approach that is sent in a convincing email. The example only has a simple prompt box. However, it is only a few more lines of code to silently install key logging software with back to base reporting to the threat actor.
 
 ## How to countermeasure file attacks
 
@@ -24,7 +24,7 @@ The example [Cross Site Request Forgery CSRF example](..\CSRF\index.html) can si
 
 A side-channel attack does not target a program or its code directly. Rather, a side-channel attack attempts to gather information or influence the program execution of a system by measuring or exploiting indirect effects of the system or its hardware. Put simply, a side channel attack breaks cryptography by exploiting information inadvertently leaked by a system when performing cryptography. This can be achieved by measuring or analysing various physical parameters such as supply current, execution time, and electromagnetic emission and then using machine learning to reverse engineer the cryptography.
 
-[TimeBasedLoginUserEnum](side_channel_example\README.md) is an example side channel attack which exploits the comparison of response times for correct and incorrect usernames to inform a username brute force.
+[Time based information leak](side_channel_example\README.md) is an example side channel attack which exploits the comparison of response times for correct and incorrect usernames that would then inform a brute force attack.
 
 ## How to countermeasure side channel attacks
 
@@ -43,7 +43,7 @@ start_time = datetime.now()
 end_time = start_time + timedelta(milliseconds=5)
 
 def authenticate_user (username, password)
-    #to be implemented with random duration and placements of pauses during computation
+    #authentication to be implemented with random duration and placements of pauses during computation
     while datetime.now() < end_time:
         return render_template("/result.html")
         sleep(1)

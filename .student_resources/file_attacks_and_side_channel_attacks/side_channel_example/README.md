@@ -1,24 +1,37 @@
-# TimeBasedLoginUserEnum
+# Time based information leak
 
-A script to enumerate valid usernames based on the requests response times.
+An example side channel exploit based on side channel time based information leak. The exploit can enumerate if a username is valid by analysing the different response times for a valid versus invalid username.
+
+> [!Note]
+> Students are not expected to be able to duplicate this or understand the complex Python implementation. This example is to model how information can leak and then be exploited only.
+
+## Requirements
+
+```bash
+pip install requests
+pip install matplotlib
+pip install rich
+```
 
 ## Features
 
 **Requirement**: A valid username on the application (no need for password)
 
-- [TimeBasedLoginAnalysis.py](./TimeBasedLoginAnalysis.py)
-  + [x] Analysis of the response time differences between a valid and invalid username.
-  + [x] Plot analysis results to a graph (option `-S` of ) or export to file (option `-f <graph.png>`).
-  + [x] Multithreaded login tries.
+- [TimeBasedLoginAnalysis.py](TimeBasedLoginAnalysis.py)
 
-- [TimeBasedLoginUserEnum.py](./TimeBasedLoginUserEnum.py)
-  + [x] Extract only usernames returning responses times that stands out.
-  + [x] Multithreaded login tries.
+  - Analysis of the response time differences between a valid and invalid username.
+  - Plot analysis results to a graph (option `-S` of ) or export to file (option `-f <graph.png>`).
+  - Multithreaded login tries.
+
+- [TimeBasedLoginUserEnum.py](TimeBasedLoginUserEnum.py)
+
+  - Extract only usernames returning responses times that stands out.
+  - Multithreaded login tries.
   
 ## Usage
 
 ```python
-$ ./TimeBasedLoginUserEnum.py -h
+python TimeBasedLoginUserEnum.py -h
 usage: TimeBasedLoginUserEnum.py [-h] -u USERNAME -f USERNAMES_FILE [-t THREADS] [-s SAMPLES] [-v]
 
 Enumerate valid usernames based on the requests response times.
@@ -39,25 +52,24 @@ optional arguments:
 
 ## Demonstration
 
-You can test this tool with the Flask app in [app.py](./test_app/app.py) and the wordlist [users.txt](./test_app/users.txt). 
+You can test this tool with the Flask app in [app.py](test_app/app.py) and the wordlist [users.txt](test_app/users.txt).
 
 ### Step 1: Analysis of time differences between valid and invalid usernames
 
 First step is to analyze whether there is a time based leak of information on the login tries:
 
 ```python
-./TimeBasedLoginAnalysis.py -u podalirius -S
+python TimeBasedLoginAnalysis.py -u podalirius -S
 ```
 
-![](./.github/graph.png)
+![An example graph output of the time analysis](README_Resources/graph.png)
 
 ### Step 2: Enumerate usernames based on response times**
 
 Now that we know that there is a time based leak of information, we can enumerate users with this command:
 
 ```python
-./TimeBasedLoginUserEnum.py -u admin -t 32 -s 100 -f ./test_app/users.txt
+python TimeBasedLoginUserEnum.py -u admin -t 32 -s 100 -f ./test_app/users.txt
 ```
 
-![](./.github/example.png)
-
+![An example username validation](README_Resources/example.png)
