@@ -18,17 +18,23 @@ def insertUser(username, password, DoB):
 def retrieveUsers(username, password):
     con = sql.connect("databaseFiles/database.db")
     cur = con.cursor()
-    cur.execute(
-        f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
-    )
+    cur.execute(f"SELECT * FROM users WHERE username = '{username}'")
     if cur.fetchone() == None:
         con.close()
         return False
     else:
-        # Simulate delayed response time of heavy app for UX testing
-        time.sleep(random.randint(190, 200) / 1000)
-        con.close()
-        return True
+        cur.execute(f"SELECT * FROM users WHERE password = '{password}'")
+        if cur.fetchone() == None:
+            with open("visitor_log.txt", "r") as file:
+                number = int(file.read().strip())
+            number += 1
+            with open("visitor_log.txt", "w") as file:
+                file.write(str(number))
+            con.close()
+            return False
+        else:
+            con.close()
+            return True
 
 
 def insertFeedback(feedback):
