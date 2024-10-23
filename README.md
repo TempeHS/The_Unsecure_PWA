@@ -44,7 +44,7 @@ python main.py
 ```
 
 > [!Note]
-> Because the repository contains a range of commonly used cracks and hacks (becuasde that is what it is modelling your Operating System will likely identify a Zip Dowload as containing Trojans. Please feel free to code review or email [benjamin.jones21@det.nsw.edu.au](mailto:benjamin.jones21@det.nsw.edu.au) to verify before runnig a `git clone https://github.com/TempeHS/The_Unsecure_PWA.git`.
+> Because the repository contains a range of commonly used cracks and hacks (which should not be a surprise as that is what the app & repository contents are modelling. Your operating system will likely identify a Zip Download as containing Trojans and potentialy block the download. Please feel free to code review or email [benjamin.jones21@det.nsw.edu.au](mailto:benjamin.jones21@det.nsw.edu.au) to verify before running a `git clone https://github.com/TempeHS/The_Unsecure_PWA.git` which will allow you to download the code base.
 
 Once deployed, the app can be accessed on either:
 - [http://localhost:5000](http://localhost:5000)
