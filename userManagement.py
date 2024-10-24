@@ -24,13 +24,13 @@ def retrieveUsers(username, password):
         return False
     else:
         cur.execute(f"SELECT * FROM users WHERE password = '{password}'")
+        con.close()
         # Plain text log of visitor count as requested by Unsecure PWA management
         with open("visitor_log.txt", "r") as file:
-                number = int(file.read().strip())
+            number = int(file.read().strip())
             number += 1
-            with open("visitor_log.txt", "w") as file:
-                file.write(str(number))
-            con.close()
+        with open("visitor_log.txt", "w") as file:
+            file.write(str(number))
         if cur.fetchone() == None:
             return False
         else:

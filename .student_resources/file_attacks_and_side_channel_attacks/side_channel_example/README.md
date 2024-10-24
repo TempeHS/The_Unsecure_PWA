@@ -21,7 +21,7 @@ The app needs to be running on port 5000 and the list of usernames to test are i
 
 ### Step 2: Analysis of time differences between valid and invalid usernames
 
-First step is to analyze whether there is a time based leak of information on the login tries:
+Now you need to analyse whether there is a time based leak of information on the login alogorythm. This is down by comparing the average login time of 20 attempts for a known username (admin) versus the average login time of 20 attempts for a random string username:
 
 ```python
 python TimeBasedLoginAnalysis.py -u admin -S
@@ -31,7 +31,7 @@ python TimeBasedLoginAnalysis.py -u admin -S
 
 ### Step 3: Enumerate usernames based on response times
 
-Now that we know that there is a time based leak of information, we can enumerate users with this command:
+Now that we know that there is a time based leak of information, we can enumerate each user in a list [users.txt](users.txt) by comparing the average login time of 100 attempts for each username with the average login time of 100 attempts of a known username (admin):
 
 ```python
 python TimeBasedLoginUserEnum.py -u admin -t 32 -s 100 -f users.txt
