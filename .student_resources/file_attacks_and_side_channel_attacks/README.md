@@ -4,7 +4,7 @@
 
 A file attack is an attack where threat actors use certain file types, usually a *.DOCX, *.XLSX, or *.PDF. Designed to entice users to open the document or follow a malicious link in a document. If the file in is embedded with malicious code, the code will be executed when the document is opened.
 
-The [urgent_finance_review.xlsm](urgent_finance_review.xlsm) spreadsheet is a common file attack approach that is sent in a convincing email. The example only has a simple prompt box. However, it is only a few more lines of code to silently install key logging software with back to base reporting to the threat actor.
+The [urgent_finance_review.xlsm](urgent_finance_review.xlsm) spreadsheet is a common file attack approach that is sent in a convincing email. The example only has a simple prompt box. However, it is only a few more lines of code to silently install key logging software with back to base reporting to the threat actor. You can view the script by enabling the 'developer' ribbon and choose 'Visual Basic'. School computers have security settings disabling VB scripts in excel so you may want to test it on your personal laptop. 
 
 ## How to countermeasure file attacks
 
