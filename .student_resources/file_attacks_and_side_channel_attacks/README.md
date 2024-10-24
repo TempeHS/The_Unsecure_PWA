@@ -10,10 +10,10 @@ The [urgent_finance_review.xlsm](urgent_finance_review.xlsm) spreadsheet is a co
 
 - Countermeasure common vulnerabilities
 
-     [Cross Frame Scripting - XFS](..\XFS\README.md)
-     [Cross Site Request Forgery - CSRF](..\CSRF\README.md)
-     [Cross Site Scripting - XSS](..\XSS\README.md)
-     [Broken Authentication and Session Management](..\broken_authentication_and_session_management\README.md).
+     - [Cross Frame Scripting - XFS](..\XFS\README.md)
+     - [Cross Site Request Forgery - CSRF](..\CSRF\README.md)
+     - [Cross Site Scripting - XSS](..\XSS\README.md)
+     - [Broken Authentication and Session Management](..\broken_authentication_and_session_management\README.md).
 
 - Implement [Two Factor Authentication - 2FA](..\two_factor_authentication\README.md).
 - End User education
