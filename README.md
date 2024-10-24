@@ -34,7 +34,7 @@ You are to run a range of security tests and scans along with a white/grey/black
 - Python 3.x +
 - Git for Windows 2.x.x +
 - Flask: `pip install flask`
-- The resources and samples in [.student_resources](.student_resources/) require additional dependencies. Please take a look at the README.md in each folder.
+- The resources and samples in [.student_resources](.student_resources/) require additional dependencies. Please refer to the README.md in each folder.
 
 ### Deployment
 
