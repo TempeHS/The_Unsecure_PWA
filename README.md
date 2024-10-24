@@ -97,7 +97,7 @@ To support students first understanding specific security vulnerabilities and pr
 | Metalanguage | Definition |
 | --- | --- |
 | Attack vector | An approach to exploiting multiple vulnerabilities |
-| Brute force | uses trial and error to crack a system or software |
+| Brute force | Use trial and error or bulk attempts to crack a system or software |
 | Exploit | The act of using a vulnerability to enter or compromise software or system |
 | Phishing | A wide base attack that is 'fishing' for success |
 | Social engineering | Use of deception to manipulate individuals into divulging confidential or personal information |
