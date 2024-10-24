@@ -34,6 +34,7 @@ Side-channel attacks can be tricky to defend against. They are difficult to dete
 - Randomise operations and data access patterns for all cryptography processes
 - Introduce noise through random micro delays
 - Isochronous functions so the software runs for an exactly constant amount of time, independent of secret values.
+- Implement tighter rate limiting on login pages. For example, install and configure [Flask Limiter](https://flask-limiter.readthedocs.io/en/stable/)
 
 ```python
 from datetime import date, datetime, timedelta
