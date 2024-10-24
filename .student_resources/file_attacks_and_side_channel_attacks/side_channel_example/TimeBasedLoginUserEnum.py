@@ -1,3 +1,25 @@
+######################################################################################################
+# Requirements: A valid username on the application (no need for password)                           #
+# Extract only usernames returning responses times that stands out.                                  #
+# Multithreaded login tries.                                                                         #
+#                                                                                                    #
+# python TimeBasedLoginUserEnum.py -h                                                                #
+# usage: TimeBasedLoginUserEnum.py [-h] -u USERNAME -f USERNAMES_FILE [-t THREADS] [-s SAMPLES] [-v] #
+#                                                                                                    #
+# Enumerate valid usernames based on the requests response times.                                    #
+#                                                                                                    #
+# optional arguments:                                                                                #
+#   -h, --help            show this help message and exit                                            #
+#   -u USERNAME, --username USERNAME                                                                 #
+#                        Username                                                                    #
+#   -f USERNAMES_FILE, --usernames-file USERNAMES_FILE                                               #
+#                         List of usernames to test                                                  #
+#   -t THREADS, --threads THREADS                                                                    #
+#                         Number of threads (default: 4)                                             #
+#   -s SAMPLES, --samples SAMPLES                                                                    #
+#                         Number of login tries (default: 20)                                        #
+#   -v, --verbose         Verbose mode. (default: False)                                             #
+######################################################################################################
 import argparse
 import requests
 import random

@@ -1,3 +1,12 @@
+#######################################################
+# Requirements: A valid username on the application   #
+#  (no need for password)                             #
+# Analysis of the response time differences between a #
+#  valid and invalid username.                        #
+# Plot analysis results to a graph (option `-S` of )  #
+#  or export to file (option `-f <graph.png>`).       #
+# Multithreaded login tries.                          #
+#######################################################
 import argparse
 import re
 import requests
