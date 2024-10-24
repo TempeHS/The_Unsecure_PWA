@@ -1,6 +1,6 @@
 > [!CAUTION]
 > # DISCLAIMER
-> __This progressive web app has been designed with a range of security vulnerabilities. The app has been specifically designed for students studying the [NESA HSC Software Engineering Course](https://curriculum.nsw.edu.au/learning-areas/tas/software-engineering-11-12-2022/content/n12/fa039e749d). The app is NOT secure and should only be used in a sandbox environment.__
+> __This progressive web app has been designed with a range of security vulnerabilities. The app has been specifically designed for students studying the [NESA HSC Software Engineering Course](https://curriculum.nsw.edu.au/learning-areas/tas/software-engineering-11-12-2022/content/n12/fa039e749d). The app is NOT secure and should NOT be used in a production environment.__
 
 <hr style="border: 0.1rem solid #d1d9e0;background:#d1d9e0"/>
 
@@ -43,15 +43,15 @@ CD THE_UNSECURE_PWA
 python main.py
 ```
 
-> [!Note]
-> Because the repository contains a range of commonly used cracks and hacks (which should not be a surprise as that is what the app & repository contents are modelling. Your operating system will likely identify a Zip Download as containing Trojans and potentialy block the download. Please feel free to code review or email [benjamin.jones21@det.nsw.edu.au](mailto:benjamin.jones21@det.nsw.edu.au) to verify before running a `git clone https://github.com/TempeHS/The_Unsecure_PWA.git` which will allow you to download the code base.
+> [!Important]
+> Because the repository contains a range of commonly used cracks and hacks (which should not be a surprise, as that is what the app & repository contents are modelling). Your operating system will likely identify a 'Zip Download' from GitHub as containing Trojans and block the download. Use `git clone https://github.com/TempeHS/The_Unsecure_PWA.git` in VSCode to download the code base. If you are concerned by the warning, please feel free to code review yourself or email me [benjamin.jones21@det.nsw.edu.au](mailto:benjamin.jones21@det.nsw.edu.au).
 
 Once deployed, the app can be accessed on either:
 - [http://localhost:5000](http://localhost:5000)
 - [http://127.0.0.1:5000](http://127.0.0.1:5000)
 - [http://{10.185.x.x}:5000](http://10.185.0.0:5000) where 10.185.x.x is the LAN IP address for the host
 
-> [!Important]
+> [!Tip]
 > Many of the resources in [.student_resources](.student_resources/) have been written assuming the student is running the app locally, so http://127.0.0.1:5000 has been used. If the teacher is hosting the app and students are black-box testing, then the html/js in the examples will need changing to reference the LAN IP address [http://{10.185.x.x}:5000](http://10.185.0.0:5000) of the host.
 
 ---
