@@ -1,4 +1,4 @@
-> [!CAUTION]
+> [!Caution]
 > # DISCLAIMER
 > __This progressive web app has been designed with a range of security vulnerabilities. The app has been specifically designed for students studying the [NESA HSC Software Engineering Course](https://curriculum.nsw.edu.au/learning-areas/tas/software-engineering-11-12-2022/content/n12/fa039e749d). The app is NOT secure and should NOT be used in a production environment.__
 
@@ -19,7 +19,7 @@ You are to run a range of security tests and scans along with a white/grey/black
 
 ---
 
-> [!TIP]
+> [!Tip]
 > ## Teaching advice:
 >
 > This app has been designed as either a teaching tool, an assessment tool or an assessment as a learning tool. __As a teaching tool__ the teacher can use the app to demonstrate discrete vulnerabilities and then teach the preferred patch method. __As an assessment tool__ the students should be taught the knowledge and skills, then given the app to analyse and report on before designing and developing appropriate patches (patching all will be time-prohibitive). __As an assessment as a learning tool__ teachers can teach vulnerabilities in the app and then support students to design and develop patches while assessing them formatively.
