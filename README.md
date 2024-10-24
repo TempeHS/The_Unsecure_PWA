@@ -30,21 +30,22 @@ You are to run a range of security tests and scans along with a white/grey/black
 
 ### Dependencies
 
-- VSCode
-- Python 3+
-- Flask pip install flask
-- The Resources and samples in [.student_resources](.student_resources/) require additional dependencies. Please take a look at the README.md in each folder.
+- VSCode 1.5 +
+- Python 3.x +
+- Git for Windows 2.x.x +
+- Flask: `pip install flask`
+- The resources and samples in [.student_resources](.student_resources/) require additional dependencies. Please take a look at the README.md in each folder.
 
 ### Deployment
 
 ```bash
 git clone https://github.com/TempeHS/The_Unsecure_PWA.git
-CD THE_UNSECURE_PWA
+CD The_Unsecure_PWA
 python main.py
 ```
 
 > [!Important]
-> Because the repository contains a range of commonly used cracks and hacks (which should not be a surprise, as that is what the app & repository contents are modelling). Your operating system will likely identify a 'Zip Download' from GitHub as containing Trojans and block the download. Use `git clone https://github.com/TempeHS/The_Unsecure_PWA.git` in VSCode to download the code base. If you are concerned by the warning, please feel free to code review yourself or email me [benjamin.jones21@det.nsw.edu.au](mailto:benjamin.jones21@det.nsw.edu.au).
+> Because the repository contains a range of commonly used cracks and hacks (which should not be a surprise, as that is what the app & repository contents are modelling). Your operating system or virus protection will identify the 'Download ZIP' from GitHub as containing 'Trojans' and block the download. Use `git clone https://github.com/TempeHS/The_Unsecure_PWA.git` in VSCode to download the code base. If you are concerned by the warning, please feel free to code review yourself or email me [benjamin.jones21@det.nsw.edu.au](mailto:benjamin.jones21@det.nsw.edu.au).
 
 Once deployed, the app can be accessed on either:
 - [http://localhost:5000](http://localhost:5000)
