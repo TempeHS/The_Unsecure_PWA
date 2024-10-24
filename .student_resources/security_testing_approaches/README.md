@@ -31,9 +31,11 @@ Code review is the process of thoroughly examining and evaluating an application
 
 ## Static application security testing (SAST)
 
-Static application security testing (SAST), or static analysis, is a testing methodology that analyzes source code to find security vulnerabilities. SAST usually is an automated approach to white-box testing that scans an application before the code is compiled.
+Static application security testing (SAST), or static analysis, is a testing methodology that analyzes source code to find security vulnerabilities. It is usually an automated approach to white-box testing that scans an application before the code is compiled.
 
 [List of SAST tools](https://owasp.org/www-community/Source_Code_Analysis_Tools)
+
+GitHub integrates a range of SAST tools; read the [GitHub Security Scan documentation](https://docs.github.com/en/code-security).
 
 | *SAST advantages* | *SAST disadvantages* |
 | -------- | ------- |
@@ -46,7 +48,7 @@ Static application security testing (SAST), or static analysis, is a testing met
 ---
 
 ## Dynamic application security testing (DAST)
-Dynamic application security testing (DAST) is a testing methodology in which testers examine an application while it’s running but have no knowledge of the application’s internal interactions or designs at the system level and no access or visibility of application source code. This is an automated approach to “black-box”.
+Dynamic application security testing (DAST) is a testing methodology in which testers examine an application while it’s running but have no knowledge of the application’s internal interactions or designs at the system level and no access or visibility of application source code. This is an automated approach to black-box testing.
 
 [List of DAST tools](https://owasp.org/www-community/Vulnerability_Scanning_Tools)
 
@@ -59,7 +61,7 @@ Dynamic application security testing (DAST) is a testing methodology in which te
 
 ## Vulnerability assessment
 
-A vulnerability assessment is a systematic review of security weaknesses in a system. It evaluates if the system is susceptible to any known vulnerabilities, assigns severity levels to those vulnerabilities, and recommends remediation or mitigation. The focus of a vulnerability assessment is infrastructure, processes and practices. It is more about the organisation than the source code of a single application.
+A vulnerability assessment is a systematic review of a system's security weaknesses. It evaluates whether the system is susceptible to any known vulnerabilities, assigns severity levels to those vulnerabilities, and recommends remediation or mitigation. The focus of a vulnerability assessment is infrastructure, processes, and practices. It is more about the organisation than the source code of a single application.
 
 ### Specific vulnerability assessments
 
@@ -84,10 +86,10 @@ Threat modelling is the process of using hypothetical scenarios, system diagrams
 
 ## Penetration testing
 
-> [!WARNING]
+> [!Warning]
 > Students MUST be extremely aware of the legal implications of performing unauthorised penetration testing. Students MUST only perform penetration tests on their applications or peers' applications with expressed permission.
 
-Penetration testing (or pen testing) is a security exercise where a cyber-security expert attempts to find and exploit vulnerabilities in a computer system. The purpose of this simulated attack is to identify any weak spots in a system’s defences that attackers could take advantage of by deploying the same strategies. Penetration testing requires the use of both automated tools and brute-force attacks.
+Penetration testing (or pen testing) is a security exercise in which a cyber-security expert attempts to find and exploit vulnerabilities in a computer system. The purpose of this simulated attack is to identify any weak spots in a system’s defences that attackers could exploit by deploying the same strategies. Penetration testing requires the use of both automated tools and brute-force attacks.
 
 ### Types of penetration testing
 
@@ -107,12 +109,12 @@ Penetration testing (or pen testing) is a security exercise where a cyber-securi
 ### Pen testing tools/support
 
 - [ZAPROXY](https://www.zaproxy.org/) Open source penetration testing application.
-- [View DNS](https://viewdns.info/) suite of DNS and hosting scanning tools
+- [View DNS](https://viewdns.info/) suite of DNS and hosting scanning tools.
 - [MX Toolbox](https://mxtoolbox.com/NetworkTools.aspx) All of your MX record, DNS, blacklist and SMTP diagnostics in one integrated tool.
-- [SSL Tools](https://www.ssllabs.com/projects/index.html) suite of SSL scanning tools
-- [Postman](https://www.postman.com/) A tool to test API's and applications
+- [SSL Tools](https://www.ssllabs.com/projects/index.html) suite of SSL scanning tools.
+- [Postman](https://www.postman.com/) A tool to test API's and applications.
 - [Wireshark](https://www.wireshark.org/about.html) the world's foremost network protocol analyser.
-- [A expensive list of open source pen-testing tools](https://www.esecurityplanet.com/applications/open-source-penetration-testing-tools/)
+- [A expensive list of open source pen-testing tools](https://www.esecurityplanet.com/applications/open-source-penetration-testing-tools/).
 
-> [!CAUTION]
-> For the [NESA software engineering syallabus](https://curriculum.nsw.edu.au/learning-areas/tas/software-engineering-11-12-2022/overview); students only need to know that penetration testing tools exist and have basic experience with using a tool and it's reporting capabilities. Students should not spend expecssive time comparing or testing different tools.
+> [!Caution]
+> For the [NESA software engineering syallabus](https://curriculum.nsw.edu.au/learning-areas/tas/software-engineering-11-12-2022/overview); students only need to know that penetration testing tools exist and have basic experience with using a tool and it's reporting capabilities. Students should not spend excessive time comparing or testing different tools.
