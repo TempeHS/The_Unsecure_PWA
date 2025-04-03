@@ -160,12 +160,12 @@ if __name__ == "__main__":
     # Preparing margins
 
     # Now, bruteforce with time based output
-    f = open(options.usernames_file, "r")
-    usernames_list = [l.strip() for l in f.readlines()]
-    f.close()
+    with open(options.usernames_file, "r") as f:
+        usernames_list = [l.strip() for l in f.readlines()]
 
     if options.outfile is not None:
-        f = open(options.outfile, "w")
+        with open(options.outfile, "w") as f:
+            pass
 
     print("[>] Loaded %d usernames to test." % len(usernames_list))
 
@@ -201,5 +201,34 @@ if __name__ == "__main__":
                     % (test_username, avg_resp)
                 )
 
+    avg_resp = average_response_time(
+            test_username, threads=options.threads, samples=options.samples
+        )
+
+    distance_to_real, distance_to_random = abs(average_real_user - avg_resp), abs(
+            average_rand_user - avg_resp
+        )
+    if distance_to_real < distance_to_random:
+        if options.outfile is not None:
+                f.write(test_username + "\n")
+        if options.no_colors:
+                print("   [+] Valid user found: '%s'" % test_username)
+        else:
+                print("   \x1b[92m[+] Valid user found: '%s'\x1b[0m" % test_username)
+        if options.verbose:
+                print(
+                    "      [>] Average response time for user '%s' is %f ms"
+                    % (test_username, avg_resp)
+                )
+        else:
+            if options.verbose:
+                if options.no_colors:
+                    print("   [+] User '%s' is invalid." % test_username)
+                else:
+                    print("   \x1b[91m[+] User '%s' is invalid.\x1b[0m" % test_username)
+                print(
+                    "      [>] Average response time for user '%s' is %f ms"
+                    % (test_username, avg_resp)
+                )
     if options.outfile is not None:
         f.close()

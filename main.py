@@ -1,13 +1,16 @@
-from flask import Flask
-from flask import render_template
-from flask import request
-from flask import redirect
+from flask import Flask, render_template, request, redirect, make_response
 import user_management as dbHandler
+
+
 
 # Code snippet for logging a message
 # app.logger.critical("message")
 
 app = Flask(__name__)
+
+def add_security_headers(response):
+    response.headers["X-Content-Type-Options"] = "nosniff"
+    return response
 
 
 @app.route("/success.html", methods=["POST", "GET", "PUT", "PATCH", "DELETE"])
@@ -52,12 +55,11 @@ def home():
         isLoggedIn = dbHandler.retrieveUsers(username, password)
         if isLoggedIn:
             dbHandler.listFeedback()
-            return render_template("/success.html", value=username, state=isLoggedIn)
+            return render_template("success.html", value=username, state=isLoggedIn)
         else:
-            return render_template("/index.html")
+            return render_template("index.html")
     else:
-        return render_template("/index.html")
-
+        return render_template("index.html")
 
 if __name__ == "__main__":
     app.config["TEMPLATES_AUTO_RELOAD"] = True
