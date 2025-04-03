@@ -1,7 +1,6 @@
-from flask import Flask, render_template, request, redirect, make_response
+from flask import Flask, render_template, request, redirect, url_for, make_response
 import user_management as dbHandler
-
-
+from urllib.parse import urlparse, urljoin
 
 # Code snippet for logging a message
 # app.logger.critical("message")
@@ -11,6 +10,11 @@ app = Flask(__name__)
 def add_security_headers(response):
     response.headers["X-Content-Type-Options"] = "nosniff"
     return response
+
+def is_safe_url(target):
+    ref_url = urlparse(request.host.url)
+    test_url = urlparse(urljoin(request.host.url, target))
+    return test_url.scheme in ("http", "https") and ref_url.netloc == test_url.netloc
 
 
 @app.route("/success.html", methods=["POST", "GET", "PUT", "PATCH", "DELETE"])
