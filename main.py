@@ -30,7 +30,7 @@ def init_app():
     """Initialize required files and directories for the application."""
     try:
         app.logger.info("Starting application initialization...")
-        
+
         # Create database directory if it doesn't exist
         app.logger.info("Creating database directory...")
         os.makedirs("database_files", exist_ok=True)
@@ -90,13 +90,14 @@ def init_app():
             app.logger.info("Feedback HTML file initialized")
         else:
             app.logger.info("Feedback HTML file already exists")
-            
+
         app.logger.info("Application initialization completed successfully!")
-        
+
     except Exception as e:
         app.logger.error(f"Error during application initialization: {str(e)}")
         app.logger.error(f"Exception type: {type(e).__name__}")
         import traceback
+
         app.logger.error(f"Traceback: {traceback.format_exc()}")
         raise
 
@@ -112,10 +113,15 @@ def health_check():
     try:
         # Test database connection
         import sqlite3
+
         con = sqlite3.connect("database_files/database.db")
         con.close()
         app.logger.info("Health check: Database connection successful")
-        return {"status": "healthy", "message": "App is running", "database": "connected"}, 200
+        return {
+            "status": "healthy",
+            "message": "App is running",
+            "database": "connected",
+        }, 200
     except Exception as e:
         app.logger.error(f"Health check failed: {str(e)}")
         return {"status": "unhealthy", "message": f"Database error: {str(e)}"}, 500
@@ -141,7 +147,10 @@ def addFeedback():
             return render_template("/success.html", state=True, value="Back")
     except Exception as e:
         app.logger.error(f"Error in addFeedback: {str(e)}")
-        return render_template("/success.html", state=False, value="Error occurred"), 500
+        return (
+            render_template("/success.html", state=False, value="Error occurred"),
+            500,
+        )
 
 
 @app.route("/signup.html", methods=["POST", "GET", "PUT", "PATCH", "DELETE"])
@@ -190,7 +199,9 @@ def home():
             if isLoggedIn:
                 app.logger.info(f"Login successful for user: {username}")
                 dbHandler.listFeedback()
-                return render_template("/success.html", value=username, state=isLoggedIn)
+                return render_template(
+                    "/success.html", value=username, state=isLoggedIn
+                )
             else:
                 app.logger.warning(f"Login failed for user: {username}")
                 return render_template("/index.html")
