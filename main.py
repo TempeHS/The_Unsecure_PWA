@@ -1,3 +1,4 @@
+import os
 from flask import Flask
 from flask import render_template
 from flask import request
@@ -67,4 +68,9 @@ def home():
 if __name__ == "__main__":
     app.config["TEMPLATES_AUTO_RELOAD"] = True
     app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
-    app.run(debug=False, host="0.0.0.0", port=10000)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(debug=False, host="0.0.0.0", port=port)
+    app.config["TEMPLATES_AUTO_RELOAD"] = True
+    app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 0
+        port = int(os.environ.get("PORT", 10000))
+        app.run(debug=False, host="0.0.0.0", port=port)

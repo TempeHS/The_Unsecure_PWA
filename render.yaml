@@ -3,6 +3,7 @@ services:
     name: flask-app
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn main:app --bind 0.0.0.0:10000"
+  startCommand: "gunicorn main:app --bind 0.0.0.0:$PORT"
+  pythonVersion: 3.11.8
     plan: free
     autoDeploy: true
