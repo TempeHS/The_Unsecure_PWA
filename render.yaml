@@ -3,9 +3,10 @@ services:
     name: flask-app
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn main:app --bind 0.0.0.0:10000"
+    startCommand: "gunicorn main:app --bind 0.0.0.0:10000 --timeout 120 --workers 1"
     plan: free
     autoDeploy: true
+    healthCheckPath: "/health"
 
     ignorePaths:
       - .student_resources/**
