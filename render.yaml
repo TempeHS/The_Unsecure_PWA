@@ -2,7 +2,7 @@ services:
   - type: web
     name: flask-app
     env: python
-    buildCommand: "pip install -r requirements_render.txt"
+    buildCommand: "pip install -r requirements.txt"
     startCommand: "gunicorn main:app --bind 0.0.0.0:10000"
     plan: free
     autoDeploy: true
@@ -11,4 +11,3 @@ services:
       - .student_resources/**
       - .devcontainer/**
       - .vscode/**
-      - requirements.txt
