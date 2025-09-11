@@ -8,7 +8,7 @@ services:
     autoDeploy: true
 
     ignorePaths:
-      - ..student_resources/**
+      - .student_resources/**
       - .devcontainer/**
       - .vscode/**
       - requirements.txt
