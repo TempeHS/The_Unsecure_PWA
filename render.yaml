@@ -3,7 +3,7 @@ services:
     name: flask-app
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn main:app --bind 0.0.0.0:10000 --timeout 120 --workers 1"
+    startCommand: "gunicorn main:app --bind 0.0.0.0:10000 --timeout 120 --workers 1 --log-level debug --access-logfile - --error-logfile -"
     plan: free
     autoDeploy: true
     healthCheckPath: "/health"
