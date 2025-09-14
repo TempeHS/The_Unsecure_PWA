@@ -12,3 +12,11 @@ services:
       - .student_resources/**
       - .devcontainer/**
       - .vscode/**
+
+  - type: cron
+    name: nightly-deployment
+    env: python
+    schedule: "0 14 * * *" # Midnight AEST (UTC+10) = 14:00 UTC
+    buildCommand: "pip install requests"
+    startCommand: "python deploy_script.py"
+    plan: free
