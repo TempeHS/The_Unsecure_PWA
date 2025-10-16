@@ -1,10 +1,11 @@
 {
   "name": "UnSecure PWA Development Environment",
-  "image": "mcr.microsoft.com/devcontainers/python:3.11-bookworm",
-  "features": {},
+  "image": "mcr.microsoft.com/devcontainers/python:0-3.11-bullseye",
+  "features": {
+    "ghcr.io/devcontainers-contrib/features/coverage-py:2": {}
+  },
   "hostRequirements": {
-    "cpus": 2,
-    "memory": "4GB"
+    "cpus": 4
   },
   "postCreateCommand": "pip install -r requirements.txt",
   "postAttachCommand": "python main.py",
