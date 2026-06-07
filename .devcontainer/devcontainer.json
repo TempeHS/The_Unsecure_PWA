@@ -1,6 +1,6 @@
 {
   "name": "UnSecure PWA Development Environment",
-  "image": "mcr.microsoft.com/devcontainers/python:0-3.11-bullseye",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12-bookworm",
   "features": {
     "ghcr.io/devcontainers-contrib/features/coverage-py:2": {}
   },
@@ -45,7 +45,7 @@
           "css": false,
           "SQL": false
         },
-        "chat.agent.enabled": true,
+        "chat.agent.enabled": false,
         "github.copilot.chat.participant.alwaysInclude": [
           "copilot-instructions.md"
         ],

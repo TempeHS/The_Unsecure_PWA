@@ -21,7 +21,7 @@
     "css": false,
     "SQL": false
   },
-  "chat.agent.enabled": true,
+  "chat.agent.enabled": false,
   "github.copilot.chat.participant.alwaysInclude": ["copilot-instructions.md"],
   "remote.portsAttributes": {
     "5000": {
