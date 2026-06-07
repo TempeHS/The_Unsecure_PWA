@@ -1,0 +1,33 @@
+{
+  "version": "0.2",
+  "language": "en-GB",
+  "globRoot": ".",
+  "ignorePaths": ["node_modules/**", "package-lock.json", "package.json"],
+  "words": [
+    "CCPA",
+    "ENDWHILE",
+    "endswith",
+    "getvalue",
+    "Gobuster",
+    "Jinja",
+    "matplotlib",
+    "NESA",
+    "parameterisation",
+    "pentest",
+    "pyotp",
+    "pyqrcode",
+    "Pypi",
+    "qrcode",
+    "Qubes",
+    "randint",
+    "REGEXR",
+    "SDLC",
+    "Semgrep",
+    "timedelta",
+    "totp",
+    "trustedwebsite",
+    "Wireshark",
+    "WSTG",
+    "ZAPROXY"
+  ]
+}

@@ -10,6 +10,8 @@ You are an educational **secure programming assistant** helping **teachers and s
 
 ## Language and Spelling Requirement
 
+<!-- cSpell:ignore color -->
+
 **It is very important to use British English spelling for all content and code throughout this project.** Ensure that all written materials, documentation, comments, and code identifiers consistently follow British English conventions (e.g., "organise" not "organize", "colour" not "color").
 
 ## Flask PWA Application Structure
@@ -366,25 +368,21 @@ python src/analyser/penetration_analyser.py localhost:5000 --deep --exploit --ou
 When using both repositories together, follow this educational sequence:
 
 1. **Code Analysis** (This Repository)
-
    - Manual code review of Flask PWA programming flaws
    - Understanding insecure coding practices
    - Student resource exploration
 
 2. **SAST Analysis** (Sandbox Environment)
-
    - Automated static analysis of The Unsecure PWA
    - Tool-based detection of programming flaws
    - Correlation between manual and automated findings
 
 3. **DAST Testing** (Sandbox Environment)
-
    - Runtime testing of deployed Flask PWA
    - Web application vulnerability scanning
    - Input validation and output encoding verification
 
 4. **Network Analysis** (Sandbox Environment)
-
    - Monitor Flask PWA network communications
    - Identify information leakage and timing issues
    - Secure communication protocol evaluation
@@ -431,7 +429,7 @@ This project aligns with comprehensive cybersecurity curriculum outcomes. All co
 
 - **Interpret and apply fundamental software development steps to develop secure code** including:
   - Requirements definition with security considerations
-  - Determining specifications with threat modeling
+  - Determining specifications with threat modelling
   - Design with security architecture principles
   - Development using secure coding practices
   - Integration with security testing and validation
@@ -469,7 +467,6 @@ This project aligns with comprehensive cybersecurity curriculum outcomes. All co
 #### Security by Design Approaches
 
 - **Use and explain cryptography contribution to 'security by design'** including:
-
   - Symmetric and asymmetric encryption implementation
   - Digital signatures and certificate management
   - Key management and secure storage

@@ -3,7 +3,7 @@
 API is the acronym for application programming interface — a software intermediary that allows two applications to talk to each other. APIs are an accessible way to extract and share data within and across organizations.
 
 > [!NOTE]
-> The [W3C defines API's as best pratice](https://www.w3.org/TR/dwbp/#accessAPIs) in making data available.
+> The [W3C defines API's as best practice](https://www.w3.org/TR/dwbp/#accessAPIs) in making data available.
 
 This safe API example is a incomplete implementation for a random movie generator. The API will randomly select a film for its database and return it as JSON. An API argument call can return whether the movie was liked or disliked by users to create a voting system. A new movie can also be added to the database through the POST method with a JSON file to the API.
 

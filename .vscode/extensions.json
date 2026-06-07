@@ -17,10 +17,11 @@
     "yahyabatulu.vscode-markdown-alert",
     "oderwat.indent-rainbow",
     "streetsidesoftware.code-spell-checker",
-    "tal7aouy.icons",
+    "streetsidesoftware.code-spell-checker-british-english",
+    "yusifaliyevpro.vscicons",
     "saeris.markdown-github-alerts",
     "yy0931.vscode-sqlite3-editor",
-    "github.copilot",
+    "github.copilot-chat",
     "ritwickdey.liveserver"
   ]
 }

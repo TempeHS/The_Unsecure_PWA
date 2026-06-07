@@ -21,7 +21,7 @@ The app needs to be running on port 5000 and the list of usernames to test are i
 
 ### Step 2: Analysis of time differences between valid and invalid usernames
 
-Now you need to analyse whether there is a time based leak of information on the login alogorythm. This is down by comparing the average login time of 20 attempts for a known username (admin) versus the average login time of 20 attempts for a random string username:
+Now you need to analyse whether there is a time based leak of information on the login algorithm. This is down by comparing the average login time of 20 attempts for a known username (admin) versus the average login time of 20 attempts for a random string username:
 
 ```python
 python TimeBasedLoginAnalysis.py -u admin -S

@@ -4,8 +4,8 @@
 
 Input validation is a security control where input is checked to be valid data. It is best practice to validate data on entry to the application before it is stored or processed. If data is not valid it should be discarded and UI feedback provided to the user.
 
-- [form field attributes](..\secure_form_attributes/README.md) demonstrates best praticies in front-end data validation.
-- [Python regular expressions, REGEXR and binary selection](data_handler.py) demonstrates different approaches to prevent a code injection in the back-end. 
+- [form field attributes](..\secure_form_attributes/README.md) demonstrates best practices in front-end data validation.
+- [Python regular expressions, REGEXR and binary selection](data_handler.py) demonstrates different approaches to prevent a code injection in the back-end.
 
 ## Data sanitisation
 
@@ -14,10 +14,10 @@ Data sanitisation is where data is 'sanitised' or cleaned for processing or stor
 ### Data sanitisation methods
 
 - The best practice is to make all strings web-safe before storing or processing them using a library like [Python html](https://docs.python.org/3/library/html.html).
-- Content loaded from a JSON file is loaded after all JavaScript has been executed, so any malicious code in a JSON will never be executed by the browser.*
-- [Jinga2](https://jinja.palletsprojects.com/en/3.1.x/) (built into Flask) converts all strings into web-safe strings before rendering on the front end.*
+- Content loaded from a JSON file is loaded after all JavaScript has been executed, so any malicious code in a JSON will never be executed by the browser.\*
+- [Jinja2](https://jinja.palletsprojects.com/en/3.1.x/) (built into Flask) converts all strings into web-safe strings before rendering on the front end.\*
 
-*_These countermeasures are reactive but are still recommended as best practice in the situation that malicious code bypasses proactive defensive measures._
+\*_These countermeasures are reactive but are still recommended as best practice in the situation that malicious code bypasses proactive defensive measures._
 
 ## Exception Handling
 
@@ -26,5 +26,6 @@ Exception handling is essential in defensive data handling as a malicious user m
 ## Logging
 
 Developing and implementing logging as part of defensive data handling improves a developer's chances of detecting malicious behaviour. A log entry should be made with every error, exception or unexpected behaviour, and it should include sufficient details of the event to allow for improvement of data handling practices. A developer and their organisation should include cyclical log reviews as part of the software development lifecycle.
+
 > [!Note]
 > [logging is recommended as best practice by the Australian Signals Directorate's Australian Cyber Security Centre](https://www.cyber.gov.au/resources-business-and-government/maintaining-devices-and-systems/system-hardening-and-administration/system-monitoring/best-practices-event-logging-threat-detection).

@@ -45,7 +45,7 @@
           "css": false,
           "SQL": false
         },
-        "chat.agent.enabled": false,
+        "chat.agent.enabled": true,
         "github.copilot.chat.participant.alwaysInclude": [
           "copilot-instructions.md"
         ],
@@ -54,6 +54,7 @@
         "liveServer.settings.root": ".student_resources"
       },
       "extensions": [
+        "ms-python.python",
         "bierner.markdown-mermaid",
         "bierner.markdown-preview-github-styles",
         "ecmel.vscode-html-css",
@@ -65,13 +66,13 @@
         "ms-python.black-formatter",
         "ms-python.debugpy",
         "ms-python.pylint",
-        "ms-python.python",
         "oderwat.indent-rainbow",
         "streetsidesoftware.code-spell-checker",
-        "tal7aouy.icons",
+        "streetsidesoftware.code-spell-checker-british-english",
+        "yusifaliyevpro.vscicons",
         "saeris.markdown-github-alerts",
         "yy0931.vscode-sqlite3-editor",
-        "github.copilot",
+        "github.copilot-chat",
         "ritwickdey.liveserver"
       ]
     }

